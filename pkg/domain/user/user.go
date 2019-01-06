@@ -6,8 +6,9 @@ import (
 )
 
 type User struct {
-	Name string
-	Email string
-	Knowledge []knowledge.Knowledge
+	Id           string
+	Name         string
+	Email        string
+	Knowledge    []knowledge.Knowledge
 	RegisteredAt time.Time
 }
