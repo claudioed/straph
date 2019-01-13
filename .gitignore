@@ -1,1 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
+.idea/emacs.xml
+.idea/encodings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/straph.iml
+.idea/workspace.xml
+vendor/
