@@ -5,15 +5,15 @@ import (
 	"github.com/straph/pkg/domain/user/repository"
 )
 
-type Service struct {
+type ReferenceService struct {
 	userRepository repository.Repository
 }
 
-func new(repository repository.Repository) *Service {
-	return &Service{userRepository: repository}
+func newReferenceService(repository repository.Repository) *ReferenceService {
+	return &ReferenceService{userRepository: repository}
 }
 
-func (s *Service) AddReference(refRequest *data.ReferenceRequest, userReqReference string) error {
+func (s *ReferenceService) AddReference(refRequest *data.ReferenceRequest, userReqReference string) error {
 	s.userRepository.ById(userReqReference)
 	return nil
 }
