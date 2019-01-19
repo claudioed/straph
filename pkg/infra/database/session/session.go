@@ -10,7 +10,7 @@ type Session struct {
 	session *mgo.Session
 }
 
-func NewSession(url string) (*Session, error) {
+func NewSession() (*Session, error) {
 	host := os.Getenv("MONGO_HOST")
 	log.Print("Connecting mongodb at host: " + host)
 	session, err := mgo.Dial(host)

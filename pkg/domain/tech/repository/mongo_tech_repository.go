@@ -13,7 +13,12 @@ type MongoTechRepository struct {
 	collection *mgo.Collection
 }
 
-func newMongoTechRepository(session *session.Session, dbName string) *MongoTechRepository {
+// For Wire (Dependency Injection Framework)
+func Initialize(session *session.Session) *MongoTechRepository {
+	return New(session)
+}
+
+func New(session *session.Session) *MongoTechRepository {
 	database := os.Getenv("DATABASE")
 	collection := session.GetCollection(database, CollectionName)
 	return &MongoTechRepository{collection}

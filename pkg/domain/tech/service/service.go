@@ -1,18 +1,18 @@
 package service
 
 import (
-	"github.com/straph/pkg/domain/tech"
+	"github.com/straph/pkg/domain/tech/data"
 	"github.com/straph/pkg/domain/tech/repository"
 )
 
-type Service struct {
+type TechService struct {
 	repository repository.Repository
 }
 
-func new(repository repository.Repository) *Service {
-	return &Service{repository: repository}
+func New(repository repository.Repository) *TechService {
+	return &TechService{repository: repository}
 }
 
-func (s *Service) RegisterTech(tech *tech.Tech) error {
-	return s.repository.Create(tech)
+func (s *TechService) RegisterTech(tech *data.TechRequest) error {
+	return s.repository.Create(tech.ToDomain())
 }
